@@ -18,7 +18,7 @@
             </el-form-item>
         </el-form>
         <!-- 表格组件 -->
-        <el-table :data="list" border stripe style="width: 100%">
+        <el-table :data="list" border stripe style="width: 100%" :row-style="{height: '40px'}" :cell-style="{padding: '0px'}" >
             <el-table-column type="index" label="序号" align="center" width="90" ></el-table-column>
             <el-table-column prop="id" label="ID" v-if="false" width="180"></el-table-column>
             <el-table-column prop="title" label="文章标题" align="center" width="180"></el-table-column>
@@ -26,16 +26,16 @@
             <el-table-column prop="thumhup" label="点赞量" align="center"></el-table-column>
             <el-table-column prop="ispublic" label="是否公开" align="center" width="180">
                 <template slot-scope="scope">
-                    <el-tag v-if="scope.row.ispublic===0" type="danger">不公开</el-tag>
-                    <el-tag v-if="scope.row.ispublic===1" type="warning">公开</el-tag>
+                    <el-tag v-if="scope.row.ispublic===0" size="small" type="danger">不公开</el-tag>
+                    <el-tag v-if="scope.row.ispublic===1" size="small" type="warning">公开</el-tag>
                 </template>
             </el-table-column>
             <el-table-column prop="status" label="状态" align="center" width="180">
                 <template slot-scope="scope">
-                    <el-tag v-if="scope.row.status===0" type="danger">已删除</el-tag>
-                    <el-tag v-if="scope.row.status===1">未审核</el-tag>
-                    <el-tag v-if="scope.row.status===2" type="success">审核通过</el-tag>
-                    <el-tag v-if="scope.row.status===3" type="warning">审核未通过</el-tag>
+                    <el-tag v-if="scope.row.status===0" size="small" type="danger">已删除</el-tag>
+                    <el-tag v-if="scope.row.status===1" size="small">未审核</el-tag>
+                    <el-tag v-if="scope.row.status===2" size="small" type="success">审核通过</el-tag>
+                    <el-tag v-if="scope.row.status===3" size="small" type="warning">审核未通过</el-tag>
                 </template>
             </el-table-column>
             <el-table-column prop="updateDate" label="最后更新时间" align="center" >
